@@ -1,38 +1,69 @@
+/* Stilar för den yttre app-container */
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column; /* Staplar barn vertikalt */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Fullskärmshöjd */
+  background-color: #4b4b4b; /* Bakgrundsfärg för appen */
+  padding: 40px;
+  box-sizing: border-box;
+  border: 5px solid orange; /* Orangefärgad gräns som på bilden */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Stil för display-div (behållare för knapparna) */
+.display {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    100px
+  ); /* Definierar storleken på knapparna */
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px; /* Mellanrum mellan knapparna */
+  margin-bottom: 20px; /* Utrymme under knapparna */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Stilar för varje knapp */
+.display button {
+  background-color: #808080; /* Grå färg på knapparna */
+  border: none;
+  color: white; /* Textfärg på knapparna */
+  font-size: 1.5em; /* Storlek på texten */
+  border-radius: 10px; /* Rundade hörn på knapparna */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Skugga för 3D-effekt */
+  padding: 20px; /* Padding för att göra knapparna större */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Effekter för knapp: hover */
+.display button:hover {
+  background-color: #9e9e9e; /* Ljusare grå när knappen hovras över */
+}
+
+/* Effekter för knapp: active */
+.display button:active {
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.6); /* Skugga inåt för tryckeffekt */
+}
+
+/* Layout för kontrollpanelen */
+.control-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  height: 300px; /* Måste justeras för att matcha display-div */
 }
 
-.App-link {
-  color: #61dafb;
+/* Stilar för varje kontroll-element */
+.control-panel div,
+.control-panel input[type="range"] {
+  margin: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Särskild stil för FCC-logotypen om du har en */
+.fcc-logo {
+  font-weight: bold;
+  color: orange;
 }
+
+/* Anpassa stilen för dina sliders och switchar här */
+/* ... */
